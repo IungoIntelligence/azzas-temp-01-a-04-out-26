@@ -1,376 +1,284 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resumo IUNGO — Outubro 2026</title>
-  <style>
-    :root {
-      --roxo: #403080;
-      --azul: #2582f5;
-      --cinza: #f3f4f7;
-      --texto: #252535;
-      --amarelo: #f0f277;
-      --borda: #d9dbe3;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 24px;
-      background: #f7f8fb;
-      color: var(--texto);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .painel {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    header {
-      margin-bottom: 22px;
-      padding: 22px;
-      border-radius: 16px;
-      background: white;
-      box-shadow: 0 3px 14px #20204012;
-    }
-
-    h1 {
-      margin: 0 0 6px;
-      color: var(--roxo);
-      font-size: clamp(22px, 3vw, 34px);
-    }
-
-    .subtitulo, .nota {
-      color: #696a78;
-      font-size: 14px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .card {
-      min-height: 125px;
-      padding: 18px;
-      border: 1px solid var(--borda);
-      border-radius: 14px;
-      background: white;
-      box-shadow: 0 3px 12px #2020400b;
-    }
-
-    .card.destaque {
-      background: var(--roxo);
-      color: white;
-      border-color: var(--roxo);
-    }
-
-    .card.amarelo {
-      background: var(--amarelo);
-    }
-
-    .rotulo {
-      margin-bottom: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      opacity: .82;
-    }
-
-    .numero {
-      font-size: clamp(23px, 3vw, 32px);
-      font-weight: 800;
-      line-height: 1.15;
-    }
-
-    .apoio {
-      margin-top: 8px;
-      font-size: 12px;
-      opacity: .78;
-    }
-
-    .secao {
-      margin: 18px 0;
-      padding: 20px;
-      border: 1px solid var(--borda);
-      border-radius: 14px;
-      background: white;
-      box-shadow: 0 3px 12px #2020400b;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      color: var(--roxo);
-      font-size: 20px;
-    }
-
-    .barra-linha {
-      display: grid;
-      grid-template-columns: 130px 1fr 150px;
-      align-items: center;
-      gap: 12px;
-      margin: 12px 0;
-      font-size: 13px;
-    }
-
-    .trilho {
-      height: 15px;
-      overflow: hidden;
-      border-radius: 20px;
-      background: #ececf2;
-    }
-
-    .barra {
-      height: 100%;
-      min-width: 3px;
-      border-radius: 20px;
-      background: var(--azul);
-    }
-
-    .valor-barra {
-      text-align: right;
-      font-weight: 700;
-    }
-
-    .tabela-wrap {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      min-width: 1200px;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-
-    th, td {
-      padding: 11px 9px;
-      border-bottom: 1px solid #e8e9ee;
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    th {
-      background: #f0eff7;
-      color: var(--roxo);
-      font-size: 12px;
-    }
-
-    th:first-child, td:first-child { text-align: left; }
-
-    tfoot td {
-      background: #eeecf7;
-      color: var(--roxo);
-      font-weight: 800;
-      border-top: 2px solid var(--roxo);
-    }
-
-    .resumo {
-      padding-left: 20px;
-      line-height: 1.7;
-    }
-
-    .resumo strong { color: var(--roxo); }
-
-    footer {
-      padding: 8px 2px;
-      color: #737482;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 650px) {
-      body { padding: 12px; }
-      .barra-linha {
-        grid-template-columns: 90px 1fr;
-      }
-      .valor-barra {
-        grid-column: 2;
-        text-align: left;
-      }
-    }
-  </style>
+<head><script src="https://myhub.ia.br/canvas-vendor/tailwind.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IUNGO — Performance de Vendas</title>
+<style>
+  :root {
+    --navy: #30246f;
+    --blue: #2580ee;
+    --ink: #20243a;
+    --muted: #70758a;
+    --line: #e7e9f0;
+    --bg: #f5f6fa;
+    --white: #fff;
+    --lime: #edf078;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 18px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  .dashboard { width: min(1120px, 100%); margin: 0 auto; }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 26px;
+  }
+  .eyebrow {
+    margin: 0 0 7px;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  h1 { margin: 0; color: var(--navy); font-size: clamp(24px, 4vw, 36px); line-height: 1.1; }
+  .subtitle { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+  .date {
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 650;
+  }
+  .section-label {
+    margin: 28px 0 12px;
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .cards.complementary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card {
+    min-height: 120px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 4px 16px rgba(30, 37, 75, .04);
+  }
+  .card.primary { border-top: 4px solid var(--blue); }
+  .card.secondary { border-top: 4px solid var(--navy); }
+  .card .label { color: var(--muted); font-size: 12px; font-weight: 700; }
+  .card .value {
+    display: block;
+    margin-top: 12px;
+    color: var(--navy);
+    font-size: clamp(23px, 3vw, 32px);
+    font-weight: 850;
+    letter-spacing: -.04em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .card .hint { display: block; margin-top: 8px; color: #8a8fa1; font-size: 11px; }
+  .panel {
+    margin-top: 16px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 4px 16px rgba(30, 37, 75, .04);
+  }
+  .panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  h2 { margin: 0; color: var(--navy); font-size: 18px; }
+  .panel-heading span { color: var(--muted); font-size: 12px; }
+  .bars { display: grid; gap: 15px; }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 130px minmax(80px, 1fr) 130px;
+    align-items: center;
+    gap: 14px;
+  }
+  .brand { color: #41465a; font-size: 13px; font-weight: 750; }
+  .track { height: 12px; overflow: hidden; border-radius: 999px; background: #eef0f6; }
+  .fill { height: 100%; min-width: 4px; border-radius: inherit; background: linear-gradient(90deg, #36277d, #2784f4); }
+  .bar-value { color: var(--ink); font-size: 13px; font-weight: 750; text-align: right; white-space: nowrap; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 930px; font-size: 12px; }
+  th {
+    padding: 11px 9px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .04em;
+    text-align: right;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  td { padding: 12px 9px; border-bottom: 1px solid #f0f1f5; text-align: right; white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  tbody tr:last-child td { border-bottom: 0; }
+  td:first-child { color: var(--navy); font-weight: 800; }
+  .highlight { background: #fbfbe9; }
+  .note { margin: 14px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+  @media (max-width: 760px) {
+    body { padding: 22px 12px; }
+    header { flex-direction: column; }
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .cards.complementary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card { min-height: 106px; padding: 14px; }
+    .card .value { font-size: 24px; }
+    .panel { padding: 16px; }
+    .bar-row { grid-template-columns: 94px minmax(50px, 1fr) 105px; gap: 8px; }
+    .brand, .bar-value { font-size: 11px; }
+  }
+  @media (max-width: 390px) {
+    .cards { grid-template-columns: 1fr 1fr; }
+    .card .value { font-size: 21px; }
+  }
+</style>
 </head>
 <body>
-  <main class="painel">
-    <header>
-      <h1>GRUPO AZZAS 2154 — Totais IUNGO</h1>
-      <div class="subtitulo">
-        IUNGO Concierge · Performance de vendas no site e app ·
-        Período analisado: 1 a 4 de outubro de 2026
-      </div>
-    </header>
+<main class="dashboard">
+  <header>
+    <div>
+      <p class="eyebrow">IUNGO Concierge · Grupo Azzas 2154</p>
+      <h1>Performance de Vendas</h1>
+      <p class="subtitle">Totais IUNGO · Site e App</p>
+    </div>
+    <div class="date">Período: 1 a 4 de outubro de 2026</div>
+  </header>
 
-    <section class="cards" aria-label="Indicadores principais">
-      <article class="card destaque">
-        <div class="rotulo">Total de vendas consolidado</div>
-        <div class="numero">R$ 10.231.236,04</div>
-        <div class="apoio">Soma da coluna “Total de Vendas” por marca</div>
-      </article>
+  <p class="section-label">Visão geral</p>
+  <section class="cards" aria-label="Indicadores consolidados">
+    <article class="card primary">
+      <span class="label">Vendas IUNGO</span>
+      <strong class="value">R$ 252.324,22</strong>
+      <span class="hint">Soma das vendas IUNGO por marca</span>
+    </article>
+    <article class="card primary">
+      <span class="label">Pedidos</span>
+      <strong class="value">423</strong>
+      <span class="hint">Quantidade de vendas no período</span>
+    </article>
+    <article class="card primary">
+      <span class="label">Sessões</span>
+      <strong class="value">24.837</strong>
+      <span class="hint">Soma das sessões por marca</span>
+    </article>
+    <article class="card primary">
+      <span class="label">Conversão consolidada</span>
+      <strong class="value">1,70%</strong>
+      <span class="hint">Pedidos divididos por sessões</span>
+    </article>
+  </section>
 
-      <article class="card">
-        <div class="rotulo">Venda diária estimada</div>
-        <div class="numero">R$ 2.557.809,01</div>
-        <div class="apoio">Total consolidado dividido por 4 dias</div>
-      </article>
+  <section class="cards complementary" style="margin-top:14px" aria-label="Indicadores complementares">
+    <article class="card secondary">
+      <span class="label">Total de vendas das marcas</span>
+      <strong class="value">R$ 10.231.236,04</strong>
+      <span class="hint">Soma do campo “Total de Vendas” do painel</span>
+    </article>
+    <article class="card secondary">
+      <span class="label">Comissão IUNGO + custo SMS</span>
+      <strong class="value">R$ 7.270,20</strong>
+      <span class="hint">Comissão R$ 6.308,10 + SMS R$ 962,10 = total</span>
+    </article>
+    <article class="card secondary">
+      <span class="label">Previsão de faturamento (comissão + SMS)</span>
+      <strong class="value">R$ 56.344,05</strong>
+      <span class="hint">R$ 7.270,20 ÷ 4 dias × 31 dias em outubro</span>
+    </article>
+    <article class="card secondary">
+      <span class="label">Venda diária média</span>
+      <strong class="value">R$ 63.081,06</strong>
+      <span class="hint">Vendas IUNGO de R$ 252.324,22 ÷ 4 dias</span>
+    </article>
+    <article class="card secondary">
+      <span class="label">Previsão de vendas no mês</span>
+      <strong class="value">R$ 1.955.512,71</strong>
+      <span class="hint">Vendas IUNGO ÷ 4 dias × 31 dias</span>
+    </article>
+    <article class="card secondary">
+      <span class="label">Incremento de vendas consolidado</span>
+      <strong class="value">2,54%</strong>
+      <span class="hint">Média ponderada pelos totais de vendas das marcas</span>
+    </article>
+  </section>
 
-      <article class="card">
-        <div class="rotulo">Previsão de vendas em outubro</div>
-        <div class="numero">R$ 79.292.079,31</div>
-        <div class="apoio">Venda diária estimada × 31 dias</div>
-      </article>
+  <section class="panel" aria-label="Gráfico de vendas IUNGO por marca">
+    <div class="panel-heading">
+      <h2>Vendas IUNGO por marca</h2>
+      <span>Valores em reais · escala comparativa</span>
+    </div>
+    <div class="bars">
+      <div class="bar-row"><span class="brand">FARM</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="bar-value">R$ 128.034,99</span></div>
+      <div class="bar-row"><span class="brand">OFF PREMIUM</span><div class="track"><div class="fill" style="width:13.1%"></div></div><span class="bar-value">R$ 16.761,37</span></div>
+      <div class="bar-row"><span class="brand">CRIS BARROS</span><div class="track"><div class="fill" style="width:18.3%"></div></div><span class="bar-value">R$ 23.438,00</span></div>
+      <div class="bar-row"><span class="brand">MARIA FILÓ</span><div class="track"><div class="fill" style="width:37.3%"></div></div><span class="bar-value">R$ 47.717,08</span></div>
+      <div class="bar-row"><span class="brand">ANIMALE</span><div class="track"><div class="fill" style="width:26.3%"></div></div><span class="bar-value">R$ 33.633,68</span></div>
+      <div class="bar-row"><span class="brand">FÁBULA</span><div class="track"><div class="fill" style="width:2.1%"></div></div><span class="bar-value">R$ 2.739,10</span></div>
+    </div>
+  </section>
 
-      <article class="card amarelo">
-        <div class="rotulo">Incremento de vendas consolidado</div>
-        <div class="numero">2,54%</div>
-        <div class="apoio">Média ponderada pelo total de vendas por marca</div>
-      </article>
-
-      <article class="card">
-        <div class="rotulo">Comissão IUNGO + custo SMS</div>
-        <div class="numero">R$ 7.270,20</div>
-        <div class="apoio">Comissão: R$ 6.308,10 · SMS: R$ 962,10</div>
-      </article>
-
-      <article class="card">
-        <div class="rotulo">Previsão de faturamento IUNGO em outubro</div>
-        <div class="numero">R$ 56.344,05</div>
-        <div class="apoio">Comissão + SMS diária × 31 dias</div>
-      </article>
-    </section>
-
-    <section class="secao">
-      <h2>Vendas por marca — total consolidado</h2>
-
-      <div class="barra-linha">
-        <strong>Farm</strong>
-        <div class="trilho"><div class="barra" style="width:100%"></div></div>
-        <div class="valor-barra">R$ 6.269.730,74</div>
-      </div>
-      <div class="barra-linha">
-        <strong>Animale</strong>
-        <div class="trilho"><div class="barra" style="width:22.97%"></div></div>
-        <div class="valor-barra">R$ 1.439.827,42</div>
-      </div>
-      <div class="barra-linha">
-        <strong>Off Premium</strong>
-        <div class="trilho"><div class="barra" style="width:14.27%"></div></div>
-        <div class="valor-barra">R$ 894.573,15</div>
-      </div>
-      <div class="barra-linha">
-        <strong>Cris Barros</strong>
-        <div class="trilho"><div class="barra" style="width:12.20%"></div></div>
-        <div class="valor-barra">R$ 765.042,32</div>
-      </div>
-      <div class="barra-linha">
-        <strong>Maria Filó</strong>
-        <div class="trilho"><div class="barra" style="width:11.92%"></div></div>
-        <div class="valor-barra">R$ 747.017,15</div>
-      </div>
-      <div class="barra-linha">
-        <strong>Fábula</strong>
-        <div class="trilho"><div class="barra" style="width:1.84%"></div></div>
-        <div class="valor-barra">R$ 115.045,26</div>
-      </div>
-    </section>
-
-    <section class="secao">
-      <h2>Detalhe por marca</h2>
-      <div class="tabela-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Marca</th>
-              <th>Sessões</th>
-              <th>Vendas</th>
-              <th>Conversão</th>
-              <th>Vendas no período</th>
-              <th>Ticket médio</th>
-              <th>Incremento</th>
-              <th>Comissão IUNGO</th>
-              <th>Custo SMS</th>
-              <th>Comissão + SMS</th>
-              <th>Total de vendas</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Farm</td><td>15.696</td><td>273</td><td>1,74%</td>
-              <td>R$ 128.034,99</td><td>R$ 468,99</td><td>2,08%</td>
-              <td>R$ 3.200,87</td><td>R$ 0,00</td><td>R$ 3.200,87</td>
-              <td>R$ 6.269.730,74</td>
-            </tr>
-            <tr>
-              <td>Off Premium</td><td>1.748</td><td>36</td><td>2,06%</td>
-              <td>R$ 16.761,37</td><td>R$ 465,59</td><td>1,91%</td>
-              <td>R$ 419,03</td><td>R$ 0,00</td><td>R$ 419,03</td>
-              <td>R$ 894.573,15</td>
-            </tr>
-            <tr>
-              <td>Cris Barros</td><td>359</td><td>6</td><td>1,67%</td>
-              <td>R$ 23.438,00</td><td>R$ 3.906,33</td><td>3,16%</td>
-              <td>R$ 585,95</td><td>R$ 0,00</td><td>R$ 585,95</td>
-              <td>R$ 765.042,32</td>
-            </tr>
-            <tr>
-              <td>Maria Filó</td><td>4.264</td><td>72</td><td>1,69%</td>
-              <td>R$ 47.717,08</td><td>R$ 662,74</td><td>6,82%</td>
-              <td>R$ 1.192,93</td><td>R$ 962,10</td><td>R$ 2.155,03</td>
-              <td>R$ 747.017,15</td>
-            </tr>
-            <tr>
-              <td>Animale</td><td>2.640</td><td>31</td><td>1,17%</td>
-              <td>R$ 33.633,68</td><td>R$ 1.084,96</td><td>2,39%</td>
-              <td>R$ 840,84</td><td>R$ 0,00</td><td>R$ 840,84</td>
-              <td>R$ 1.439.827,42</td>
-            </tr>
-            <tr>
-              <td>Fábula</td><td>130</td><td>5</td><td>3,85%</td>
-              <td>R$ 2.739,10</td><td>R$ 547,82</td><td>2,44%</td>
-              <td>R$ 68,48</td><td>R$ 0,00</td><td>R$ 68,48</td>
-              <td>R$ 115.045,26</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>TOTAL</td>
-              <td>24.837</td>
-              <td>423</td>
-              <td>1,70%</td>
-              <td>R$ 252.324,22</td>
-              <td>R$ 596,51</td>
-              <td>2,54%</td>
-              <td>R$ 6.308,10</td>
-              <td>R$ 962,10</td>
-              <td>R$ 7.270,20</td>
-              <td>R$ 10.231.236,04</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </section>
-
-    <section class="secao">
-      <h2>Resumo executivo</h2>
-      <ul class="resumo">
-        <li><strong>Vendas consolidadas:</strong> R$ 10,23 milhões; Farm representa a maior parcela.</li>
-        <li><strong>Projeção para outubro:</strong> R$ 79,29 milhões, usando a média diária dos quatro dias informados e 31 dias no mês.</li>
-        <li><strong>Incremento consolidado:</strong> 2,54%, ponderado pelo total de vendas de cada marca.</li>
-        <li><strong>Comissão IUNGO + SMS:</strong> R$ 7.270,20 no período; projeção de R$ 56.344,05 para 31 dias.</li>
-        <li><strong>Vendas detalhadas no período:</strong> R$ 252.324,22, com 423 pedidos e conversão consolidada de 1,70%.</li>
-      </ul>
-    </section>
-
-    <footer>
-      <strong>Critérios:</strong> as projeções são estimativas lineares, calculadas a partir de 4 dias
-      e projetadas para 31 dias. A taxa de incremento consolidada é ponderada pelo “Total de Vendas”
-      de cada marca. Custos SMS não exibidos por marca foram considerados como R$ 0,00; o único valor
-      informado na imagem é o de Maria Filó.
-    </footer>
-  </main>
+  <section class="panel">
+    <div class="panel-heading">
+      <h2>Detalhamento por marca</h2>
+      <span>Dados extraídos da imagem</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Sessões</th>
+            <th>Qtd. vendas</th>
+            <th>Conversão</th>
+            <th>Vendas IUNGO</th>
+            <th>Ticket médio</th>
+            <th>Incremento</th>
+            <th>Comissão IUNGO</th>
+            <th>Custo SMS</th>
+            <th>Total de vendas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FARM</td><td>15.696</td><td>273</td><td>1,74%</td><td>R$ 128.034,99</td><td>R$ 468,99</td><td>2,08%</td><td>R$ 3.200,87</td><td>—</td><td>R$ 6.269.730,74</td>
+          </tr>
+          <tr>
+            <td>OFF PREMIUM</td><td>1.748</td><td>36</td><td>2,06%</td><td>R$ 16.761,37</td><td>R$ 465,59</td><td>1,91%</td><td>R$ 419,03</td><td>—</td><td>R$ 894.573,15</td>
+          </tr>
+          <tr>
+            <td>CRIS BARROS</td><td>359</td><td>6</td><td>1,67%</td><td>R$ 23.438,00</td><td>R$ 3.906,33</td><td>3,16%</td><td>R$ 585,95</td><td>—</td><td>R$ 765.042,32</td>
+          </tr>
+          <tr class="highlight">
+            <td>MARIA FILÓ</td><td>4.264</td><td>72</td><td>1,69%</td><td>R$ 47.717,08</td><td>R$ 662,74</td><td>6,82%</td><td>R$ 1.192,93</td><td>R$ 962,10</td><td>R$ 747.017,15</td>
+          </tr>
+          <tr>
+            <td>ANIMALE</td><td>2.640</td><td>31</td><td>1,17%</td><td>R$ 33.633,68</td><td>R$ 1.084,96</td><td>2,39%</td><td>R$ 840,84</td><td>—</td><td>R$ 1.439.827,42</td>
+          </tr>
+          <tr>
+            <td>FÁBULA</td><td>130</td><td>5</td><td>3,85%</td><td>R$ 2.739,10</td><td>R$ 547,82</td><td>2,44%</td><td>R$ 68,48</td><td>—</td><td>R$ 115.045,26</td>
+          </tr>
+          <tr class="highlight">
+            <td>TOTAL</td><td>24.837</td><td>423</td><td>1,70%</td><td>R$ 252.324,22</td><td>R$ 596,51</td><td>2,54%</td><td>R$ 6.308,10</td><td>R$ 962,10</td><td>R$ 10.231.236,04</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">A conversão consolidada foi calculada pela divisão do total de vendas IUNGO (423) pelo total de sessões (24.837). O custo de SMS aparece na imagem somente para Maria Filó; “—” indica que não há valor exibido para as demais marcas.</p>
+  </section>
+</main>
 </body>
 </html>
